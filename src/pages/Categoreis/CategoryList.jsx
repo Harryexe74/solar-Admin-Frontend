@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { AiOutlineSearch, AiOutlineDownload } from 'react-icons/ai';
 import { FaEye, FaTrash } from 'react-icons/fa';
-import ApiUrl from '../../ApiUrl';
+// import ApiUrl from '../../ApiUrl';
 
 const CategoryList = React.memo(({ categories, handleDelete, handleSearch, searchQuery }) => {
   const renderedCategories = useMemo(() => {
@@ -11,7 +11,7 @@ const CategoryList = React.memo(({ categories, handleDelete, handleSearch, searc
         <td>{`C${category._id.substring(0, 6)}`}</td>
         <td>
           <img
-            src={`${ApiUrl}/uploads/${category.logo}`} 
+            src={`${category.logo}`} 
             className="avatar" 
             alt={category.name} 
             aria-label="Category Logo"

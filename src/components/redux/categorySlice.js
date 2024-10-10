@@ -18,6 +18,10 @@ export const fetchCategories = createAsyncThunk(
   }
 );
 
+
+
+
+
 // Get category by ID
 export const fetchCategoryById = createAsyncThunk(
   'productCategory/fetchCategoryById',
@@ -84,7 +88,8 @@ export const deleteCategory = createAsyncThunk(
   'productCategory/deleteCategory',
   async (categoryId, { rejectWithValue }) => {
     try {
-      await axios.delete(`${API_URL}/${categoryId}`);
+      const response  =await axios.delete(`${API_URL}/${categoryId}`);
+      console.log(response)
       return categoryId;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
